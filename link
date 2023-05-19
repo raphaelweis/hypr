@@ -27,9 +27,6 @@ pickHost() {
     fi
 
     exit 0
-  else
-    echo "Error: There is no configuration matching this host"
-    exit 1
   fi
   if [ $host = "laptop" ]; then
     mkdir -p $PROGRAM_TARGET
@@ -50,9 +47,6 @@ pickHost() {
     fi
 
     exit 0
-  else
-    echo "Error: There is no configuration matching this host"
-    exit 1
   fi
   if [ $host = "desktop" ]; then
     mkdir -p $PROGRAM_TARGET
@@ -73,10 +67,9 @@ pickHost() {
     fi
 
     exit 0
-  else
-    echo "Error: There is no configuration matching this host"
-    exit 1
   fi
+  echo "Error: There is no configuration matching this host"
+  exit 1
 }
 
 deletePackage() {
